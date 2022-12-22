@@ -10,7 +10,7 @@ function init() {
     
     // have names appear in dropdown menu
     d3.json(url).then((data) => {
-      var individualNames = data.names;
+      let individualNames = data.names;
       individualNames.forEach((individual) => {
         dropdownMenu
           .append("option")
@@ -29,6 +29,7 @@ function demographicInfo(individual){
 d3.json(url).then(data => {
 let metaData = data.metadata
 let resultsArray = metaData.filter(sampleobject => sampleobject.id == individual)
+console.log(resultsArray)
 let result = resultsArray[0]
 let demographicPanel = d3.select("#sample-metadata")
 demographicPanel.html("")
